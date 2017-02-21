@@ -9,5 +9,8 @@ build: ## Builds the docker container
 composer: ## Install composer dependencies
 	@docker run --rm -v $(PWD):/app $(NAME) "composer install"
 
+autoload: ## Dump autoload
+	@docker run --rm -v $(PWD):/app $(NAME) "composer dump-autoload"
+
 test: ## Run unit tests
 	@docker run --rm -v $(PWD):/app $(NAME) "vendor/bin/phpunit --tap --colors='always'"
