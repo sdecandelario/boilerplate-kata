@@ -1,0 +1,34 @@
+{
+  "name": "sdecandelario/bowling-kata",
+  "description": "FizzBuzz extended kata",
+  "type": "project",
+  "require": {
+    "php": "^7.0"
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^3.1",
+    "phpunit/phpunit": "^5.7",
+    "jakub-onderka/php-parallel-lint": "^0.9"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "SergioDeCandelario\\FizzBuzzExtendedKata\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SergioDeCandelario\\FizzBuzzExtendedKata\\": "tests/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true
+  },
+  "scripts": {
+    "test": [
+      "parallel-lint . --exclude vendor",
+      "phpunit --configuration phpunit.xml"
+    ]
+  }
+}
